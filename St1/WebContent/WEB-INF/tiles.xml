@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>   
+  
+<!DOCTYPE tiles-definitions PUBLIC   
+"-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"  
+ "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+	<definition name="baseLayout" template="/WEB-INF/template/layout.jsp">
+		<put-attribute name="title" value=""></put-attribute>
+		<put-attribute name="header" value="/WEB-INF/template/header.jsp"></put-attribute>
+		<put-attribute name="body" value=""></put-attribute>
+		<put-attribute name="footer" value="/WEB-INF/template/footer.jsp"></put-attribute>
+	</definition>
+
+
+	<definition name="tgt" extends="baseLayout">
+		<put-attribute name="title" value="Test"></put-attribute>
+		<put-attribute name="body" value="/test.jsp"></put-attribute>
+	</definition>
+
+	<definition name="form" extends="baseLayout">
+		<put-attribute name="title" value="Form"></put-attribute>
+		<put-attribute name="body" value="/index.jsp"></put-attribute>
+	</definition>
+
+	<definition name="test" extends="baseLayout">
+		<put-attribute name="title" value="Form Data"></put-attribute>
+		<put-attribute name="body" value="/simple.jsp"></put-attribute>
+	</definition>
+
+	<definition name="viewall" extends="baseLayout">
+		<put-attribute name="title" value="List Data"></put-attribute>
+		<put-attribute name="body" value="/viewall.jsp"></put-attribute>
+	</definition>
+
+
+</tiles-definitions>

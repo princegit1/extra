@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>    
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts  
+Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+
+
+<struts>
+	<constant name="struts.devMode" value="true" />
+	<package name="abcd" namespace="/" extends="struts-default">
+
+		<result-types>
+			<result-type name="tiles"
+				class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+
+
+		<action name="form" method="execute" class="com.test.Product">
+			<result name="success" type="tiles">form</result>
+		</action>
+
+		<action name="test" method="tt" class="com.test.Product">
+			<result name="success" type="tiles">dt</result>
+		</action>
+
+		<action name="tgt" class="tt1" method="execute">
+			<result name="success" type="tiles">tgt</result>
+		</action>
+		<action name="viewall" class="com.controller.PersonController"
+			method="listPerson">
+			<result name="success" type="tiles">viewall</result>
+		</action>
+
+	</package>
+</struts>  
+   
+   
+               

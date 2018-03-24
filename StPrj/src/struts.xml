@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+        "http://struts.apache.org/dtds/struts-2.1.dtd">
+
+<struts>
+	<constant name="struts.custom.i18n.resources" value="global" />
+	<constant name="struts.devMode" value="true" />
+	<package name="abcd" namespace="/" extends="struts-default,json-default">
+		<action name="test1" class="com.dto.Test1">
+			<result>test1.jsp</result>
+		</action>
+		<!-- <action name="reg" class="com.dto.Users"> <result name="success">reg.jsp</result> 
+			</action> -->
+		<action name="regs" class="com.dto.Users">
+			<interceptor-ref name="jsonValidationWorkflowStack"></interceptor-ref>
+			<result name="input">reg.jsp</result>
+			<result name="success">regs.jsp</result>
+		</action>
+	</package>
+
+	<package name="a2" namespace="/user" extends="struts-default">
+		<action name="register" class="com.controller.RegisterController">
+			<result name="success">register.jsp</result>
+		</action>
+		<!-- <action name="registers" class="com.controller.RegisterController"> 
+			<result name="success">register-success.jsp</result> </action> -->
+	</package>
+
+	<package name="a23" namespace="/jt" extends="struts-default,json-default">
+		<action name="test1" class="com.controller.AjaxController">
+			<result name="success">/test1.jsp</result>    
+		</action>
+		<action name="hl" class="com.controller.AjaxController" method="hl"></action>
+		<action name="sum" class="com.controller.AjaxController"
+			method="sum"></action>
+		<action name="find" class="com.controller.AjaxController"
+			method="find">
+			<result type="json">
+				<param name="root">jsonData</param>
+			</result>
+		</action>
+		<action name="findall" class="com.controller.AjaxController"
+			method="findall">
+			<result type="json">
+				<param name="root">jsonData</param>
+			</result>   
+		</action>
+	</package>
+
+</struts>                           
